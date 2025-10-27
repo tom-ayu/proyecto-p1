@@ -1,0 +1,25 @@
+@import 'variables';
+@import 'mixins';
+
+@import 'section-header';
+
+@import 'header';
+@import 'hero';
+@import 'about';
+@import 'unique';
+@import 'be-unique';
+@import 'products';
+@import 'support';
+@import 'footer';
+
+/* Global styles */ 
+body {
+  font-family: 'Poppins', sans-serif;
+  color: $text-color;
+  margin: 0;
+  background: $bg-color;
+}
+
+section {
+  padding: 4rem 2rem;
+}

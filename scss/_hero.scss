@@ -1,0 +1,154 @@
+.hero {
+  background: url('../img/hero-bg.jpg') center/cover no-repeat;
+  color: $primary-color;
+  text-align: left;
+  padding: 80px 0 80px;
+
+  &__content {
+    max-width: $max-width;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  &__title {
+    font-size: clamp(2rem, 1vw + 1.5rem, 2.5rem);
+    max-width: 700px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 0 .5rem;
+  }
+
+  &__subtitle {
+    margin: 0 0 2rem;
+    font-size: .9rem;
+    letter-spacing: .15em;
+    font-weight: 500;
+    opacity: .8;
+  }
+
+  /* FEATURE CARDS WRAPPER */
+  &__features {
+    max-width: min(1100px, 92%);
+    margin-left: auto;
+    margin-right: auto;
+
+    transform: translateY($hero-shift-desktop);
+    margin-bottom: -$hero-shift-desktop;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $hero-gap-desktop;
+
+    z-index: 2;
+    position: relative;
+
+    /* BREAKPOINT MOBILE */
+    @media (max-width: 768px) {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: $hero-gap-mobile;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-inline: 1rem;
+      width: 100%;
+      scroll-snap-type: x mandatory;
+
+      transform: translateY($hero-shift-mobile);
+      margin-bottom: -$hero-shift-mobile;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding-bottom: 2rem;
+  }
+}
+
+.card {
+  position: relative;
+  background: #fff;
+  border-radius: $card-radius;
+  text-align: center;
+  padding: $card-padding-desktop;
+  box-shadow: $card-shadow-base;
+  color: transparent;
+  overflow: visible;
+  scroll-snap-align: start;
+  scroll-margin-left: 1rem;
+
+  // ICONO
+  &::before {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  // LABEL
+  &::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -34px;
+    text-align: center;
+    color: #000;
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 400;
+    letter-spacing: .2px;
+    content: "";
+  }
+
+  /* MODIFICADORES BEM */
+  &--layout {
+    &::before { background-image: url('../icons/layout.svg'); }
+    &::after  { content: "Countless Layout"; }
+
+    box-shadow: $card-shadow-base,
+                0 20px 40px rgba(map-get($card-glow-colors, layout), .6);
+  }
+
+  &--customize {
+    &::before { background-image: url('../icons/customize.svg'); }
+    &::after  { content: "Easy to customize"; }
+
+    box-shadow: $card-shadow-base,
+                0 20px 40px rgba(map-get($card-glow-colors, customize), .6);
+  }
+
+  &--live {
+    &::before { background-image: url('../icons/live.svg'); }
+    &::after  { content: "Live customizer"; }
+
+    box-shadow: $card-shadow-base,
+                0 20px 40px rgba(map-get($card-glow-colors, live), .6);
+  }
+
+  &--responsive {
+    &::before { background-image: url('../icons/responsive.svg'); }
+    &::after  { content: "Fully responsive"; }
+
+    box-shadow: $card-shadow-base,
+                0 20px 40px rgba(map-get($card-glow-colors, responsive), .6);
+  }
+
+  @media (max-width: 768px) {
+    flex: 0 0 240px;
+    max-width: 240px;
+    padding: $card-padding-mobile;
+
+    &::after {
+      bottom: -24px;
+      font-size: .9rem;
+      line-height: 1.3;
+    }
+  }
+}

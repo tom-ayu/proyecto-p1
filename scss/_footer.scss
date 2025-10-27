@@ -1,0 +1,21 @@
+.footer {
+  background: #000;
+  color: #aaa;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+
+  &__copy {
+    margin: 0;
+    color: $text-color;
+  }
+
+  a {
+    color: $primary-color;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

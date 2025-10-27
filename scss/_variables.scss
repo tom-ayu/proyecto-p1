@@ -1,0 +1,21 @@
+$primary-color: #fff;
+$secondary-color: #076CF0;
+$terceary-color: #000;
+$text-color: #000;
+$bg-color: #fff;
+$max-width: 1200px;
+
+$hero-gap-desktop: 22px;
+$hero-gap-mobile: 16px;
+$hero-shift-desktop: 70px;
+$hero-shift-mobile: 40px;
+$card-radius: 14px;
+$card-shadow-base: 0 10px 24px rgba(0,0,0,.1);
+$card-padding-desktop: 36px 18px;
+$card-padding-mobile: 24px 12px;
+$card-glow-colors: (
+  layout: #4091FB,
+  customize: #7FE7C6,
+  live: #DF8CC4,
+  responsive: #F4A382
+);
